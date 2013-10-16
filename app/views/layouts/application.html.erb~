@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% if content_for?(:head) %>
+  <%= content_for(:head) %>
+<% else %>
+  <title>Don't Feed The Meter</title>
+<% end %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
