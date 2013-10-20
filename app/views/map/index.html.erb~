@@ -1,5 +1,0 @@
-<% content_for :head do %>
-  <title>Map View</title>
-<% end %>
-<h1>This is where a map will be displayed, eventually.</h1>
-<p>Let's see rails display a paragraph for once, eh?</p>
