@@ -4,8 +4,7 @@ This project started off at a Hackathon that I went to during the summer, called
 using the Play Framework, but since I've been learning Rails I decided to rewrite it. I'm just starting out with Rails,
 so the code may not always follow "the Rails way", but I try to make it as clean as I can.
 
-Right now it can't be hosted on Heruko because I'm using SQLite as the database, I will probably fix this shortly but
-for now I don't really feel like doing so (even though it's an easy fix).
+This app can be hosted on Heroku by doing a simple heroku push.
 
 I plan on making this semi-polished, as I would like to earn some money from my webapps in the near future and
 I figure I might as well start practicing making a polished project now.
