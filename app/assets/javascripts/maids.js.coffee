@@ -7,7 +7,16 @@ initialize = ->
     center: new google.maps.LatLng(-34.397, 150.644)
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
+  window.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
 
 $(document).ready ->
   initialize()
+  google.maps.event.addListener(window.map, 'click', (event) ->
+    placeMarker(event.latLng)
+  )
+
+placeMarker = (location) ->
+  marker = new google.maps.Marker(
+    position: location
+    map: window.map
+  )
