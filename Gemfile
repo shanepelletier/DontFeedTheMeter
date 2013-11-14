@@ -49,3 +49,5 @@ group :development do
   gem 'rack-livereload'
   gem 'sqlite3'
 end
+
+ruby "1.9.3"
