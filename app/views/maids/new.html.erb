@@ -6,3 +6,10 @@
 <% end %>
 <h1>Click where you see the meter maid</h1>
 <div id="map-canvas"></div>
+<%= form_for :maid, url: maids_path do |f| %>
+  <%= f.hidden_field :lat %>
+  <%= f.hidden_field :lng %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

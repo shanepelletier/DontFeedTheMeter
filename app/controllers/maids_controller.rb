@@ -4,4 +4,8 @@ class MaidsController < ApplicationController
 
   def new
   end
+
+  def create
+    render text: params[:maid].inspect
+  end
 end
