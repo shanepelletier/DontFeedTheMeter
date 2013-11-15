@@ -1,1 +1,15 @@
 <p>Here's the location of all of the meter maids in your area</p>
+
+<table>
+  <tr>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+
+  <% @maids.each do |maid| %>
+    <tr>
+      <td><%= maid.lat %></td>
+      <td><%= maid.lng %></td>
+    </tr>
+  <% end %>
+</table>

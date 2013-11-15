@@ -1,11 +1,23 @@
 class MaidsController < ApplicationController
   def index
+    @maids = Maid.all
   end
 
   def new
   end
 
   def create
-    render text: params[:maid].inspect
+    @maid = Maid.new(maid_params)
+    @maid.save
+    redirect_to :action => "index"
   end
+
+  def show
+    @maid = Maid.find(params[:id])
+  end
+
+  private
+    def maid_params
+      params.require(:maid).permit(:lat, :lng)
+    end
 end
