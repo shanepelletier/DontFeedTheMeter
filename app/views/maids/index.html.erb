@@ -1,15 +1,8 @@
+<% content_for :head do %>
+  <title>All Meter Maids</title>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAht8hS3qR_Vp9n9N-OdrLaqEffWlymOf0&sensor=false">
+  </script>
+<% end %>
 <p>Here's the location of all of the meter maids in your area</p>
-
-<table>
-  <tr>
-    <th>Latitude</th>
-    <th>Longitude</th>
-  </tr>
-
-  <% @maids.each do |maid| %>
-    <tr>
-      <td><%= maid.lat %></td>
-      <td><%= maid.lng %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="map-canvas"></div>

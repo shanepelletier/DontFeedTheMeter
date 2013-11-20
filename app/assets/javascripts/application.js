@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require paloma
 //= require foundation.min
 //= require_tree .

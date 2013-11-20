@@ -1,6 +1,7 @@
 class MaidsController < ApplicationController
   def index
     @maids = Maid.all
+    js :maids => @maids
   end
 
   def new

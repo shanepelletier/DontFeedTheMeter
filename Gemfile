@@ -44,6 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'paloma'
+
 group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
