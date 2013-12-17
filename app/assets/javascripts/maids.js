@@ -14,7 +14,12 @@ MaidsController.prototype.index = function() {
   for (var i = 0; i < this.params['maids'].length; i++) {
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(this.params['maids'][i].lat, this.params['maids'][i].lng),
-      map: googlemap
+      map: googlemap,
+      url: 'maids/' + (i + 1) + '/edit'
+    });
+
+    google.maps.event.addListener(marker, 'click', function(event) {
+      window.location.href = this.url;
     });
   }
 }
@@ -44,5 +49,28 @@ MaidsController.prototype.new = function() {
       $('#maid_lat').val(event.latLng.lat());
       $('#maid_lng').val(event.latLng.lng());
     }
+  });
+}
+
+MaidsController.prototype.edit = function() {
+  // Display map with marker
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  googlemap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  
+
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(this.params.maid.lat, this.params.maid.lng),
+    map: googlemap,
+    draggable: true  
+  });
+  
+  google.maps.event.addListener(marker, 'dragend', function(event) {
+    $('#maid_lat').val(event.latLng.lat());
+    $('#maid_lng').val(event.latLng.lng());
   });
 }

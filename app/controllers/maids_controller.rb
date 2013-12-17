@@ -5,6 +5,7 @@ class MaidsController < ApplicationController
   end
 
   def new
+    @maid = Maid.new
   end
 
   def create
@@ -15,6 +16,21 @@ class MaidsController < ApplicationController
 
   def show
     @maid = Maid.find(params[:id])
+  end
+
+  def edit
+    @maid = Maid.find(params[:id])
+    js :maid => @maid
+  end
+
+  def update
+    @maid = Maid.find(params[:id])
+
+    if @maid.update(params[:maid].permit(:lat, :lng))
+      redirect_to :action => "index"
+    else
+      render 'edit'
+    end
   end
 
   private
