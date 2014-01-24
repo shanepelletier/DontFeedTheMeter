@@ -1,5 +1,5 @@
 DontFeedTheMeter::Application.routes.draw do
-  get "users/new"
+  resources :users
   resources :maids
   root "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
